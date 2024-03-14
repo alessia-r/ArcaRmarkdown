@@ -1,0 +1,43 @@
+---
+title: "grafico"
+author: "Alessia Raio"
+date: "2024-03-13"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(plotly)
+library(ggplot2)
+```
+
+
+```{r cars}
+summary (cars)
+
+```
+
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+```{r, echo=FALSE, eval=knitr::is_html_output()}
+grafico = ggplot(rock, 
+       aes(y=peri,x=shape, color =shape, size = peri)) + geom_point() + 
+  theme_bw() + theme(legend.position = "none") 
+plotly::ggplotly(grafico)
+```
+
+
+
+```{r plot-static, echo=FALSE, eval=knitr::is_latex_output()}
+grafico = ggplot(rock, 
+       aes(y=peri,x=shape, color =shape, size = peri)) + geom_point() + 
+  theme_bw() + theme(legend.position = "none") 
+grafico
+
+```
+

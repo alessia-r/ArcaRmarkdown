@@ -1,0 +1,117 @@
+---
+title: "Prova"
+author: "Alessia"
+date: today
+format: 
+  html:
+    toc: true
+    toc-title: I miei contenuti
+    toc-location: right
+    toc-depth: 3
+editor: source
+lang: it
+---
+
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+You can add options to executable code like this 
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+```{r}
+#| fig-cap: "La mia immagine"
+#| fig-cap-location: top
+#| out-width: 50%
+#| label: fig-prima
+#| fig-align: right
+knitr::include_graphics("immagini/germ.jpeg")
+```
+
+![Caption della figura](immagini/albero.png){#fig-label}
+
+```{r, echo=FALSE}
+#| fig-cap: "Il mio grafico"
+#| fig-cap-location: top
+#| out-width: 50%
+#| fig-align: center
+#| label: fig-grafico
+library(ggplot2)
+ggplot(rock, 
+       aes(y=peri,x=shape, color =shape, size = peri)) + geom_point() + 
+  theme_light() + theme(legend.position = "none") 
+
+```
+In @fig-grafico c'è un grafico
+
+## colonne
+
+:::: {.columns}
+
+
+::: {.column width="30%"}
+
+testo nella prima colonna
+
+:::
+
+::: {.column width="30%"}
+
+Testo nella seconda colonna
+
+:::
+
+::: {.column width="30%"}
+
+Testo nella terza colonna
+
+:::
+
+::::
+
+::: {.panel-tabset}
+
+## Introduzione
+
+Descrizione del mio dataset 
+
+## I dati
+
+
+Primo tabset con una tabella contenente il dataset
+
+
+## Il grafico
+
+Terzo tabset con il grafico dei dati
+
+
+:::
+
+
+```{r}
+#| fig-cap: "Il mio grafico"
+#| fig-cap-location: top
+#| out-width: 50%
+#| fig-align: center
+#| label: fig-grafico
+library(ggplot2)
+ggplot(rock, 
+       aes(y=peri,x=shape, color =shape, size = peri)) + geom_point() + 
+  theme_light() + theme(legend.position = "none") 
+
+```
+In @fig-grafico c'è un grafico
