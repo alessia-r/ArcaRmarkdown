@@ -102,16 +102,5 @@ Terzo tabset con il grafico dei dati
 :::
 
 
-```{r}
-#| fig-cap: "Il mio grafico"
-#| fig-cap-location: top
-#| out-width: 50%
-#| fig-align: center
-#| label: fig-grafico
-library(ggplot2)
-ggplot(rock, 
-       aes(y=peri,x=shape, color =shape, size = peri)) + geom_point() + 
-  theme_light() + theme(legend.position = "none") 
 
-```
 In @fig-grafico c'è un grafico
